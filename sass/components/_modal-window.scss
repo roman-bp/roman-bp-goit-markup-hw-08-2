@@ -1,0 +1,238 @@
+.backdrop {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(85, 85, 85, 0.85);
+    transition: opacity 750ms, visibility 1300ms;
+}
+
+
+.backdrop.is-hidden .modal {
+    transform: translateX(-500%) scale(2.9)
+}
+
+.modal {
+
+    position: absolute;
+    width: 528px;
+    min-height: 581px;
+    border-radius: 4px;
+    background-color: var(--first-bgc);
+    padding: 40px;
+
+    box-shadow:
+        0px 1px 3px rgba(0, 0, 0, 0.12),
+        0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 700ms;
+}
+
+.modal-title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.15;
+    text-align: center;
+    letter-spacing: 0.03em;
+
+    color: var(--btn-secondary-color);
+    margin-bottom: 12px;
+
+}
+
+.form-field {
+
+    margin-bottom: 10px;
+}
+
+.form-field.check {
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+
+.modal-input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    background-color: transparent;
+    padding: 12px 11px 12px 40px;
+
+}
+
+.modal-input-name {
+    display: block;
+    color: var(--text-color);
+    margin-bottom: 4px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+    color: var(--text-color);
+
+
+
+}
+
+
+.modal-comment {
+    display: block;
+    width: 100%;
+    height: 120px;
+    padding: 0;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    padding: 16px 12px;
+
+}
+
+.modal-comment::placeholder {
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+    color: rgba(117, 117, 117, 0.5);
+
+}
+
+.input-wrap {
+    position: relative;
+}
+
+
+.modal-input:hover,
+.modal-input:focus,
+.modal-comment:hover,
+.modal-comment:focus {
+    border-color: var(--accent-color);
+}
+
+.icon-name {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.modal-input:hover+.icon-name,
+.modal-input:focus+.icon-name {
+    fill: var(--accent-color);
+}
+
+
+.privacy-check-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    color: var(--text-color);
+}
+
+.privacy-check-label::before {
+    background-image: url(../images/icons/check.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 15px;
+    border: 1px solid var(--text-color);
+    border-radius: 4px;
+    margin-right: 7px;
+    cursor: pointer;
+    transition:
+        box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-check:checked+.privacy-check-label::before {
+    background-color: var(--accent-color);
+    border: none;
+}
+
+.privacy-link {
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    text-decoration-line: underline;
+    color: var(--accent-color);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    margin-left: 5px;
+
+}
+
+.privacy-link:hover,
+.privacy-link:focus {
+    color: var(--accent-color-hover);
+}
+
+/* .modal-agreement {
+    color: var(--accent-color);
+} */
+
+.button-submit-privacy {
+    display: block;
+    border: 0px;
+    min-width: 200px;
+    min-height: 50px;
+    border-radius: 4px;
+    padding: 10px 32px;
+    background-color: var(--btn-color);
+    color: var(--btn-text-color);
+    margin: auto;
+    margin-top: 30px;
+}
+
+.button-submit-privacy:hover,
+.button-submit-privacy:focus {
+    cursor: pointer;
+    background-color: var(--btn-hover);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15)
+}
+
+.coment {
+    margin-bottom: 5px;
+}
+
+.modal-input::placeholder {
+    color: var(--modal-placeholder);
+}
+
+.modal-close {
+    cursor: pointer;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+
+
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    fill: var(--accent-color);
+}
+
+.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+textarea {
+    resize: none;
+}

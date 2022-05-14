@@ -1,0 +1,75 @@
+.port-title {
+    margin-bottom: 70px;
+}
+
+
+
+/*-----------------------------portf-work-section----------------------------*/
+
+
+
+.card-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__bgc {
+        background-color: var(--first-bgc);
+        border: 1px solid #EEEEEE;
+        border-top: 0;
+        padding: 24px 20px;
+    }
+
+    &__link {
+        display: inline-block;
+        transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    &__link:focus,
+    &__link:hover {
+        box-shadow:
+            0px 1px 1px rgba(0, 0, 0, 0.12) 0px 4px 4px rgba(0, 0, 0, 0.06),
+            1px 4px 6px rgba(0, 0, 0, 0.16);
+
+    }
+
+    &__posttitle {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 2;
+        letter-spacing: 0.06em;
+        color: var(--title-color);
+        /* margin-bottom: 4px; */
+
+    }
+
+    &__text {
+        font-size: 16px;
+        line-height: 1.88;
+        letter-spacing: 0.03em;
+
+        color: var(--text-color);
+    }
+}
+
+
+.card-list .item:not(:nth-child(3n)) {
+    margin-right: 30px;
+
+
+}
+
+.card-list .item:not(:nth-last-child(-n+3)) {
+
+    margin-bottom: 30px;
+
+}
+
+.card-list .item:hover {
+    cursor: pointer;
+
+}
+
+.card-list__link:focus .overlay-wrap__text,
+.card-list__link:hover .overlay-wrap__text {
+    transform: translateY(0);
+}
